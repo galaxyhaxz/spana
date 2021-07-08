@@ -5,6 +5,7 @@ import (
 	"math/rand"
 	"time"
 	"unsafe"
+	"github.com/galaxyhaxz/go-learn/clegacy"
 )
 
 var SudGrid [9][9]int
@@ -78,16 +79,6 @@ func PrintGrid() {
 	fmt.Printf("\n")
 }
 
-// go-lang is so pathetic it lacks functions as basic as this
-func MemSet(s unsafe.Pointer, c byte, n uintptr) {
-	ptr := uintptr(s)
-	var i uintptr
-	for i = 0; i < n; i++ {
-		pByte := (*byte)(unsafe.Pointer(ptr + i))
-		*pByte = c
-	}
-}
-
 func MakeSudoku(start_moves int) {
 	var x, y int
 
@@ -102,7 +93,7 @@ func MakeSudoku(start_moves int) {
 		}
 		var done int
 		done = 1
-		MemSet(unsafe.Pointer(&SudGrid), 0, unsafe.Sizeof(SudGrid))
+		clegacy.MemSet(unsafe.Pointer(&SudGrid), 0, unsafe.Sizeof(SudGrid))
 		for y = 0; y < 9 && done == 1; y++ {
 			for x = 0; x < 9 && done == 1; x++ {
 				SudGrid[x][y] = FindFreeNum(x, y)
