@@ -1,6 +1,4 @@
-A set of puzzle and brain teaser games - written in both Go and C
-
-The purpose of this project is to help build my knowledge of Go by writing the initial program in C then converting it to Go. I am also a die-hard fan of puzzle games and find them to be very addicting and stimulating. I plan to add many more games in the future, such as maze generators, cryptograms, crossword puzzles, and more!
+A set of puzzle and brain teaser games - written C, Go, and/or Python
 
 ## Pixel Flood
 
